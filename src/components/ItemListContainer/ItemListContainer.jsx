@@ -1,9 +1,16 @@
+import CardContainer from '../CardContainer/CardContainer'
 import './ItemListContainer.css'
 
-const ItemListContainer = ({ greeting }) => {
+
+
+export const ItemListContainer = ({ greeting }) => {
+
+
+
     return (
         <section >
-            <h2>  { greeting } </h2>
+            <h2 className='text-center'>  {greeting} </h2>
+            <CardContainer />
         </section>
     )
 }

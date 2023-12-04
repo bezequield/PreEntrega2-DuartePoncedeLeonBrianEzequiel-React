@@ -1,18 +1,16 @@
 import CartWidget from "../CartWidget/CartWidget"
 
-import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
-import Form from 'react-bootstrap/Form'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
-import NavDropdown from 'react-bootstrap/NavDropdown'
+import { Link, NavLink } from "react-router-dom"
 
 const NavBar = () => {
     return (
         <>
-            <Navbar expand="lg" className="bg-body-tertiary">
+            <Navbar  expand="lg" className="bg-body-tertiary">
                 <Container fluid>
-                    <Navbar.Brand href="#">Tu Cafeteria Fitt</Navbar.Brand>
+                    <Link className="btn" style={{border: 'none'}} to="/">Menú Online</Link>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
@@ -20,30 +18,18 @@ const NavBar = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Nav.Link href="#action1">Inicio</Nav.Link>
-                            <Nav.Link href="#action2">Desayunos</Nav.Link>
-                            <NavDropdown title="Menus" id="navbarScrollingDropdown">
-                                <NavDropdown.Item href="#action3">Vegetarianos</NavDropdown.Item>
-                                <NavDropdown.Item href="#Gluten Free"> Gluten Free </NavDropdown.Item>
-                                <NavDropdown.Divider />
-                            </NavDropdown>
+                            <NavLink className={( {isActive} ) => isActive ? 'btn btn-dark' : 'btn' } to="/">Inicio</NavLink>
+                            <NavLink className={( {isActive} ) => isActive ? 'btn btn-dark' : 'btn' } to="/category/traditional">Traditional</NavLink>
+                            <NavLink className={( {isActive} ) => isActive ? 'btn btn-dark' : 'btn' } to="/category/meat-free">Meat-Free</NavLink>
                         </Nav>
-
-                        <Form className="d-flex">
-                            <Form.Control
-                                type="search"
-                                placeholder="Search"
-                                className="me-2"
-                                aria-label="Search" />
-                            <Button variant="outline-success">Buscar</Button>
-                        </Form>
-
+                    <NavLink className={( {isActive} ) => isActive ? 'btn btn-dark' : 'btn' } to='/carrito'>
+                        <CartWidget />
+                    </NavLink  >
                     </Navbar.Collapse>
                 </Container>
-                <CartWidget />
             </Navbar>
 
-            
+
 
         </>
     );
