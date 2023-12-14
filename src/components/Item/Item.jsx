@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { ItemCounter } from "../ItemCounter/ItemCounter";
+// import { ItemCounter } from "../ItemCounter/ItemCounter";
 
-export const CardContainerBody = ({ product }) => {
+export const Item = ({ product }) => {
 
-    const onAdd = (cantidad) => {
-        console.log(`lacantidad seleccionada es ${cantidad}`)
-    }
+    // const onAdd = (cantidad) => {
+    //     console.log(`lacantidad seleccionada es ${cantidad}`)
+    // }
 
     return (
         <div className="card">
@@ -30,4 +30,4 @@ export const CardContainerBody = ({ product }) => {
     );
 };
 
-export default CardContainerBody
+export default Item

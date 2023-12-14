@@ -1,12 +1,13 @@
 
 import { useCounter } from "../../hooks/useCounter.js";
 
-export const ItemCounter = ({ initial=1, stock=5, onAdd }) => {
+export const ItemCount = ({ initial=1, stock=5, onAdd }) => {
     const {counter, handleRestar, handleSumar} = useCounter(initial, stock)  
     
     const handleOnAdd = () => {
         onAdd(counter)
     }
+
 
     return (
 

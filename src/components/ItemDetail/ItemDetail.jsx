@@ -2,9 +2,7 @@ import { useEffect, useState } from "react"
 import { mFetch } from "../helpers/mFetch"
 import { useParams } from "react-router-dom"
 
-
-
-export const CardContainerItemDetail = () => {
+export const ItemDetail = () => {
 
     const [product, setproduct] = useState({})
     const {pid} = useParams()
@@ -16,7 +14,6 @@ export const CardContainerItemDetail = () => {
     }, [])
 
     return (
-
         <div className="card text-center">
             <div className='card-body p-0'>
                 <h6 className="card-header">{product.name}</h6>
@@ -27,8 +24,7 @@ export const CardContainerItemDetail = () => {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-
-export default CardContainerItemDetail
+export default ItemDetail
